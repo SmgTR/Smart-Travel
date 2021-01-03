@@ -1,0 +1,69 @@
+.top__nav-logo-icon{
+  animation: opacity 8s;
+}
+
+.top__nav-description{
+  animation: opacity 2s;
+  display: none;
+}
+
+.search{
+  animation: opacity 4s;
+  display: none;
+}
+
+main{
+  display: none;
+}
+
+.flex__container,
+.weather,
+.google{
+  animation: opacity 2s;
+}
+
+
+
+
+@keyframes opacity{
+  0%{
+    opacity: 0%;
+  }
+
+  50%{
+    opacity: 0%;
+  }
+
+  100%{
+    opacity: 100%;
+  }
+}
+
+
+@keyframes pageloader__layer{
+  0%{
+    height: 100vh;
+  }
+
+  50%{
+    height: 100vh;
+  }
+
+  100%{
+    height: 0;
+  }
+}
+
+
+
+@keyframes pageloader__txt{
+  0%{
+    opacity: 100%;
+    visibility: visible;
+  }
+
+  100%{
+    opacity: 0;
+  }
+
+}

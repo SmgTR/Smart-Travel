@@ -1,0 +1,106 @@
+.preloader {
+  min-height: 50vh;
+  width: 10rem;
+  margin: 20rem auto;
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  width: 2rem;
+  background: $secondary-color;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+.page__preloader {
+  color: $main-color;
+
+  &-layer,
+  &-layer--1,
+  &-layer--2 {
+    width: 100vw;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  &-layer {
+    background-color: $secondary-color;
+    animation: pageloader__layer 3s;
+    z-index: 4;
+  }
+
+  &-layer--1 {
+    background-color: $highlight-color;
+    animation: pageloader__layer 6s;
+    z-index: 2;
+  }
+
+  &-layer--2 {
+    background-color: $tertiary-color;
+    animation: pageloader__layer 9s;
+    z-index: 1;
+  }
+
+  &__title--1,
+  &__title--2,
+  &__title--3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    z-index: 102;
+    text-align: center;
+
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+  }
+
+  &__title--1 {
+    opacity: 0;
+    visibility: hidden;
+    animation: pageloader__txt 2s ease-in;
+  }
+  &__title--2 {
+    opacity: 0;
+    visibility: hidden;
+    animation: pageloader__txt 2s 2s ease-in;
+  }
+  &__title--3 {
+    opacity: 0;
+    visibility: hidden;
+    animation: pageloader__txt 2s 4s ease-in;
+  }
+}

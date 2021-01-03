@@ -1,0 +1,213 @@
+.top__nav {
+  padding: 4rem 0 15rem 10rem;
+  height: 20rem;
+  width: 100vw;
+
+  @include respond(tab-port) {
+    padding: 4rem 0 4rem 0;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    &-icon {
+      font-size: 2.4rem;
+      margin-left: 1.8rem;
+      color: $highlight-color;
+    }
+  }
+
+  &-brand {
+    font-size: 4rem;
+    font-family: "Dancing Script", cursive;
+  }
+
+  &-description {
+    text-transform: uppercase;
+    // font-weight: 300;
+    color: $secondary-color;
+    margin-top: 1rem;
+
+    @include respond(tab-port) {
+      text-align: center;
+      padding: 2rem;
+      line-height: 2.2rem;
+    }
+
+    span {
+      border-bottom: 2px solid $highlight-color;
+    }
+  }
+}
+
+.search {
+  text-align: center;
+  padding: 2rem 0;
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__form {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
+    & label {
+      margin-right: 0.4rem;
+      font-size: 1.8rem;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+      }
+    }
+
+    & input {
+      border: none;
+      border-bottom: 2px solid $secondary-color;
+      outline: none;
+      padding: 1rem 1rem;
+      background-color: darken($main-color, 2%);
+      border-radius: 1rem;
+      margin-right: 2rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    background-color: $highlight-color;
+    padding: 1rem 2rem;
+    color: $main-color;
+    border-radius: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($highlight-color, 5%);
+      transition: 0.2s;
+      transform: translateY(-2px);
+      box-shadow: 0 0.4rem 1rem rgba($secondary-color, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    @include respond(tab-port) {
+      margin-top: 1rem;
+    }
+
+    &-text {
+      margin-left: 1rem;
+      align-self: center;
+    }
+  }
+}
+
+#search__btn-icon {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.line {
+  width: 100vw;
+  height: 4px;
+  background-color: $highlight-color;
+  margin-top: 8rem;
+}
+
+.bg {
+  background-size: cover;
+  padding: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($main-color, 0.8),
+      rgba($main-color, 0.4)
+    ),
+    url(../img/bgmay.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.error {
+  color: $error-color;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 1.4rem;
+}
+
+.last__places {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $main-color;
+  background-color: $secondary-color;
+
+  &-title {
+    margin-right: 2rem;
+    @include respond(tab-port) {
+      margin-right: 0;
+      margin-top: 2rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    list-style: none;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    & li:not(:first-child) {
+      display: flex;
+      align-items: center;
+      height: 8rem;
+      width: 10rem;
+      padding: 0 2rem;
+
+      justify-content: center;
+      transition: 0.4s;
+
+      @include respond(tab-port) {
+        height: 4rem;
+        width: 100%;
+      }
+    }
+
+    & li:last-child {
+      @include respond(tab-port) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    & li:hover {
+      background-color: $highlight-color;
+      cursor: pointer;
+    }
+  }
+}

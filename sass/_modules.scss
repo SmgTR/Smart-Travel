@@ -1,0 +1,455 @@
+.flex__container {
+  margin-top: 6rem;
+  align-items: baseline;
+  justify-content: space-around;
+  overflow: hidden;
+  display: none;
+
+  @include respond(tab-land) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.wiki {
+  width: 60%;
+  background-color: darken($main-color, 3%);
+
+  @include respond(tab-land) {
+    width: 100%;
+    // padding: 1rem;
+  }
+
+  &__header {
+    font-size: 2.4rem;
+    margin-left: 6rem;
+    padding-top: 2.4rem;
+
+    @include respond(tab-port) {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  &__box {
+    display: flex;
+    padding: 4rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+
+  &__photo {
+    width: 35rem;
+    height: 35rem;
+    padding: 2rem;
+
+    @include respond(tab-port) {
+      align-self: center;
+    }
+  }
+
+  &__text {
+    min-width: 40%;
+    margin-left: 4rem;
+    margin-top: 2rem;
+
+    @include respond(tab-port) {
+      text-align: justify;
+      margin-left: 0;
+    }
+  }
+
+  &__link,
+  &__link:visited,
+  &__link:active {
+    color: $highlight-color;
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+}
+
+.ticket {
+  width: 20%;
+  @include respond(tab-land) {
+    width: 100%;
+  }
+}
+
+.tickets {
+  width: 100%;
+
+  @include respond(tab-land) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    margin: 0 auto;
+    grid-gap: 2rem;
+  }
+
+  &__title {
+    margin: -2rem 0 2.4rem 0;
+    background-color: $tertiary-color;
+    font-size: 2.4rem;
+    padding: 2rem;
+
+    @include respond(tab-land) {
+      text-align: center;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-land) {
+      padding-top: 2rem;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    &-status {
+      margin-top: 0.4rem;
+      font-size: 1.4rem;
+    }
+
+    &-title {
+      line-height: 1.8rem;
+    }
+
+    &-date {
+      margin-top: 0.4rem;
+      font-size: 1.4rem;
+    }
+
+    &-img {
+      width: 10rem;
+      margin-right: 2rem;
+    }
+
+    &-line {
+      height: 0.3rem;
+      background-color: $secondary-color;
+      width: 100%;
+      margin: 2.4rem 0;
+
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+  }
+}
+
+.weather {
+  display: none;
+  margin: 4rem 0;
+  text-align: center;
+
+  &__header {
+    font-size: 2.8rem;
+    margin: 5.4rem 0;
+
+    @include respond(tab-land) {
+      margin-top: 10rem;
+    }
+  }
+
+  &__top {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+  }
+
+  &__info {
+    margin-left: 4rem;
+  }
+
+  &__today {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__temp__box {
+    display: flex;
+  }
+
+  #weather__icon {
+    font-size: 8rem;
+  }
+
+  #city__name {
+    font-size: 2.2rem;
+  }
+  #desc {
+    font-size: 1.8rem;
+    margin: 0.4rem 0 1rem 0;
+  }
+  #temp {
+    font-size: 10rem;
+  }
+
+  &__bottom {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-around;
+    width: 80%;
+  }
+
+  &__middle {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2rem;
+  }
+}
+
+.center {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.bottom__icon {
+  font-size: 2rem;
+  margin-right: 2rem;
+
+  @include respond(tab-port) {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+}
+
+.week__list {
+  margin-top: 2rem;
+
+  &-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__description {
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+
+    &__temp {
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+.min,
+.max,
+.sunrise,
+.sunset {
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+
+.google {
+  display: none;
+  font-size: 1.8rem;
+  margin-top: 20rem;
+  width: 80vw;
+  min-height: 80vh;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    padding: 6rem 0;
+  }
+
+  &__grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    grid-gap: 4rem;
+    margin: 0 auto;
+
+    @include respond(tab-port) {
+      grid-gap: 2rem 0;
+    }
+  }
+
+  &__header {
+    // margin-bottom: 2rem;
+  }
+}
+
+.card {
+  border: 1px solid $secondary-color;
+  height: 40rem;
+  width: auto;
+  position: relative;
+
+  @include respond(tab-port) {
+    width: 80%;
+    height: 20rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 100;
+
+    &--background {
+      position: relative;
+      background-color: rgba($main-color, 0.8);
+      z-index: 100;
+      padding: 1.4rem;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.footer {
+  margin-top: 8rem;
+  background-color: $secondary-color;
+  color: $main-color;
+  min-height: 20vh;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.4rem;
+  display: none;
+
+  &__info {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__links {
+    list-style: none;
+
+    &__icon {
+      margin-left: 1rem;
+    }
+  }
+
+  &__links a {
+    color: $main-color;
+  }
+
+  &__links li {
+    margin-top: 1rem;
+  }
+}
+
+.not__founded {
+  min-height: 30vh;
+  text-align: center;
+  display: none;
+
+  &-text {
+    margin-top: 4rem;
+    font-size: 2.4rem;
+    color: $error-color;
+  }
+}
+
+.up {
+  visibility: hidden;
+  background-color: $highlight-color;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $main-color;
+  position: fixed;
+  top: 92%;
+  right: 2%;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.up:hover {
+  transform: translateY(-2px);
+  background-color: darken($highlight-color, 5%);
+}
+
+.exchange {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+
+  &__icon {
+    font-size: 2rem;
+    margin: 0 2rem;
+
+    &:hover {
+      color: $highlight-color;
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    @include respond(tab-port) {
+      margin: 2rem 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__input,
+  &__curr {
+    padding: 0.8rem;
+  }
+}
+
+.rate {
+  font-size: 1.4rem;
+  color: $highlight-color;
+  margin-bottom: 1.4rem;
+}

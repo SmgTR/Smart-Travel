@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Smart Travel- Everything You need to travel</title>
+     <link rel="stylesheet" href="css/style.css">
+     <link rel= "stylesheet" href="css/weather-icons.min.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
+     <!-- ****** favicony faviconit.com ****** -->
+     <link rel="shortcut icon" href="/favicon.ico">
+     <link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+     <link rel="icon" type="image/png" sizes="196x196" href="fav/favicon-192.png">
+     <link rel="icon" type="image/png" sizes="160x160" href="fav/favicon-160.png">
+     <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96.png">
+     <link rel="icon" type="image/png" sizes="64x64" href="fav/favicon-64.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16.png">
+     <link rel="apple-touch-icon" href="/favicon-57.png">
+     <link rel="apple-touch-icon" sizes="114x114" href="fav/favicon-114.png">
+     <link rel="apple-touch-icon" sizes="72x72" href="fav/favicon-72.png">
+     <link rel="apple-touch-icon" sizes="144x144" href="fav/favicon-144.png">
+     <link rel="apple-touch-icon" sizes="60x60" href="fav/favicon-60.png">
+     <link rel="apple-touch-icon" sizes="120x120" href="fav/favicon-120.png">
+     <link rel="apple-touch-icon" sizes="76x76" href="fav/favicon-76.png">
+     <link rel="apple-touch-icon" sizes="152x152" href="fav/favicon-152.png">
+     <link rel="apple-touch-icon" sizes="180x180" href="fav/favicon-180.png">
+     <meta name="msapplication-TileColor" content="#FFFFFF">
+     <meta name="msapplication-TileImage" content="fav/favicon-144.png">
+     <meta name="msapplication-config" content="browserconfig.xml">
+ <!-- ****** favicony faviconit.com ****** -->
+
+
+     <!-- weather icons from erikflowers.github.io -->
+     <!-- stock photos from pexels.com -->
+   </head>
+   <body>
+
+      <!-- nav bar at top when top site is not in viewport -->
+
+
+     <div class="page__preloader">
+       <div class="page__preloader-layer"></div>
+       <div class="page__preloader-layer--1"></div>
+       <div class="page__preloader-layer--2"></div>
+
+      <h1 class="page__preloader__title--1">Information</h1>
+      <h1 class="page__preloader__title--2">Weather</h1>
+      <h1 class="page__preloader__title--3">Events & Places</h1>
+     </div>
+
+  <!-- Logo & nav -->
+  <div class="bg">
+    <section class="top__nav">
+
+      <div class="top__nav-logo">
+        <h2 class="top__nav-brand">Smart Travel</h2>
+        <i class="fas fa-map-marker-alt top__nav-logo-icon"></i>
+
+      </div>
+
+      <h2 class="top__nav-description">Everything you need to know about <span>your destination</span></h2>
+
+
+
+
+    </section>
+
+
+    <!-- Section for inputs -->
+
+    <section class="search">
+
+      <h2 class="search__title"><span>Start Your Journey here:</h2>
+
+      <form action="#" class="search__form">
+        <label for="city">City:</label>
+        <input type="text" id="locality" name="city" placeholder="London">
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country " placeholder="GB">
+
+        <div class="search__btn" id="search__btn">
+            <img src="img/search.svg" id="search__btn-icon" alt="">
+            <h4 class="search__btn-text">Search</h4>
+        </div>
+      </form>
+    <!-- class handling error while occure -->
+    <div class="error"></div>
+
+
+
+    </section>
+      <div class="line"></div>
+      <div class="last__places">
+
+        <ol class="last__places-list"></ol>
+      </div>
+</div>
+    <main>
+
+      <!-- if city name or country is incorrect -->
+      <div class="not__founded">
+        <h2 class="not__founded-text">Not found. Try again</h2>
+      </div>
+
+      <!-- placeholder, preloader -->
+      <div class="preloader">
+        <div class="lds-facebook"><div></div><div></div><div></div></div>
+      </div>
+
+      <section class="exchange">
+        <h2 class="exchange__title">Exchange Rate Calculator:</h2>
+
+          <div class="rate" id="rate"></div>
+
+        <div class="exchange__container">
+          <div class="currency">
+            <input type="number" id="amount-one" placeholder="0" value="0" class="exchange__input"/>
+            <select id="exchange__currency--1" class="exchange__curr">
+
+            </select>
+
+          </div>
+
+          <i class="fas fa-exchange-alt exchange__icon" id="swap"></i>
+
+          <div class="currency">
+            <input type="number" id="amount-two" placeholder="0" value="0" class="exchange__input"/>
+
+            <select id="exchange__currency--2" class="exchange__curr">
+
+            </select>
+          </div>
+        </div>
+
+      </section>
+
+
+    <div class="flex__container">
+
+      <section class="wiki">
+
+
+
+        <h2 class="wiki__header">Information</h2>
+
+        <div class="wiki__box">
+
+        <img src="#" alt="city photo" class="wiki__photo">
+
+        <div class="wiki__text">
+        <h1 class="wiki__title">Kraków</h1>
+
+        <p class="wiki__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate fugiat accusamus numquam vel quo tempora non odit eos, provident nostrum, voluptates vero iste ab quae accusantium id. Ex numquam quaerat optio sed tempora, nam vero, eum consequatur eius atque.
+
+        </p>
+
+        </div>
+
+        </div>
+      </section>
+
+
+  <!-- tickets -->
+
+      <section class="ticket">
+        <h2 class="tickets__title">Events</h2>
+        <div class="tickets">
+
+        </div>
+
+      </section>
+
+
+  </div>
+
+      <!-- Output section -->
+
+      <section class="weather">
+
+        <h2 class="weather__header">Weather</h2>
+
+        <div class="flex">
+
+        <div class="weather__top">
+
+          <i class="wi wi-night-sleet" id="weather__icon"></i>
+
+          <div class="weather__info">
+            <p class="weather__today">Today</p>
+            <h2 id="city__name"></h2>
+            <p id="desc"></p>
+            <div class="weather__temp__box">
+            <h1 id="temp"></h1>
+            <h1 class="temp__celc"><span>&#8451;</span></h1>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="weather__bottom">
+          <div class="min">
+            <i class="wi wi-thermometer-exterior bottom__icon"></i>
+
+            <h2 class="weather__bottom-title" id="min-temp"></h2>
+          </div>
+          <div class="max">
+            <i class="wi wi-thermometer bottom__icon"></i>
+
+            <h2 class="weather__bottom-title" id="max-temp">Max Temp: 8</h2>
+          </div>
+          <div class="sunrise">
+            <i class="wi wi-sunrise bottom__icon ml-low"></i>
+
+            <h2 class="weather__bottom-title ml-lowplus" id="sunrise">Sunrise</h2>
+          </div>
+          <div class="sunset">
+            <i class="wi wi-moonset bottom__icon"></i>
+
+            <h2 class="weather__bottom-title" id="sunset">Sunset</h2>
+          </div>
+        </div>
+
+        </div>
+
+          <div class="center">
+            <div class="weather__middle"></div>
+          </div>
+      </section>
+
+
+      <section class="google">
+          <h2 class="google__title">Places to see</h2>
+          <ul class="google__grid">
+
+          </ul>
+        <div id="map"></div>
+      </section>
+
+
+
+    </main>
+
+  <a href="#"><div class="up">
+    <i class="fas fa-chevron-up"></i>
+  </div></a>
+
+
+    <footer class="footer">
+
+
+      <p>Project by SmgTR &copy;</p>
+      <div class="footer__info">
+        <ul class="footer__links">
+          <li><a href="https://github.com/SmgTR">Github <i class="fab fa-github footer__links__icon"></i></a></li>
+          <li><a href="https://itutorials.pl">Portfolio<i class="fas fa-user-tie footer__links__icon"></i></a></li>
+        </ul>
+      </div>
+
+    </footer>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTUWf_ax7VvOFysJGaEZvFcz1mPG2ow08&libraries=places&language=en"></script>
+    <script src="ticket.js"></script>
+    <script src="exchange.js"></script>
+    <script src="google.js"></script>
+    <script src="userlocation.js"></script>
+    <script src="weather.js"></script>
+    <script src="ui.js"></script>
+    <script src="storage.js"></script>
+    <script src="wiki.js"></script>
+    <script src="app.js"></script>
+
+   </body>
+   </html>

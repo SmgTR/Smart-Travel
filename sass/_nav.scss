@@ -1,0 +1,37 @@
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 201;
+  width: 100vw;
+  height: 6rem;
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $main-color;
+  padding: 2.6rem 0;
+  visibility: hidden;
+  opacity: 0;
+
+  @include respond(big-desktop) {
+    visibility: visible;
+    opacity: 100%;
+  }
+
+  & label {
+    margin-right: 0.4rem;
+    font-size: 1.4rem;
+  }
+
+  & input {
+    border: none;
+    border-bottom: 2px solid $secondary-color;
+    outline: none;
+    padding: 0.6rem 0.6rem;
+    background-color: darken($main-color, 2%);
+    border-radius: 1rem;
+    margin-right: 2rem;
+    margin-left: 1rem;
+  }
+}

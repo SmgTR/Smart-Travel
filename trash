@@ -1,0 +1,224 @@
+.hamb__menu{
+  margin-left:auto;
+  width:2.4rem;
+  height: .2rem;
+  background-color: white;
+  position: relative;
+}
+
+/* Top bar */
+
+.hamb__menu::after{
+  content:'';
+  display: block;
+  position:absolute;
+  top:-1rem;
+  left:0;
+  height: .2rem;
+  width: 2.4rem;
+  background-color: white;
+}
+
+
+/* Bottom bar */
+
+.hamb__menu::before{
+  content:'';
+  display: block;
+  position:absolute;
+  top:1rem;
+  left:0;
+  height: .2rem;
+  width: 1.2rem;
+  background-color: white;
+}
+
+
+
+weather__info{
+  margin-left: 4rem;
+}
+
+#weather__icon{
+  width:20rem;
+  height:20rem;
+}
+
+#city__name{
+  color: #2CBF0E;
+  font-size: 4.2rem;
+}
+
+#desc{
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin-top: .8rem;
+  color: #CCCCCC;
+}
+
+#temp{
+  font-size: 12rem;
+  font-weight: lighter;
+  margin-left:  -1rem;
+  position: relative;
+}
+
+#temp span{
+  font-size: 4rem;
+  position: absolute;
+  top:10%;
+  margin-left: .8rem;
+}
+
+/* Weather bottom */
+
+.min,
+.max,
+.sunrise,
+.sunset{
+  display: flex;
+  align-items: center;
+
+}
+
+.weather__bottom{
+  margin:10rem auto 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather__bottom img{
+  margin-right: 1rem;
+}
+
+.weather__bottom-title{
+  margin-right: 4rem;
+}
+
+/* Footer */
+
+.footer{
+  color:#B2A7C3;
+  font-weight: lighter;
+  display: flex;
+  padding:0rem 12rem;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 8rem;
+  font-size: .8rem;
+}
+
+.left{
+  margin-right: 2rem;
+}
+
+
+
+
+getLocation(newCity,newCountry){
+
+    this.city = newCity;
+
+    const succesGeo = position =>{
+
+      const { latitude, longitude } = position.coords;
+       fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${this.apiKey}`)
+         .then(response=>response.json())
+         .then(response=> {
+            const responseData = response.results;
+
+            responseData.forEach(function(a){
+              newCity= a.components.city;
+              newCountry = a.components.country_code;
+            })
+          })
+        }
+
+  }
+
+
+
+
+
+  class Location{
+    constructor(city, country) {
+      this.apiKey='574a56f8348b40a287637b13435a2930'
+      this.city = city;
+      this.country= country;
+    }
+
+
+    getLocation(newCity,newCountry){
+
+        const succesGeo = (position, city) =>{
+
+          const { latitude, longitude } = position.coords;
+           fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${this.apiKey}`)
+             .then(response=>response.json())
+             .then(response=> {
+                const responseData = response.results;
+
+                responseData.forEach(function(a){
+                  console.log(a);
+                  newCity= a.components.city;
+                  newCountry = a.components.country_code;
+                })
+
+
+             })
+
+
+      }
+
+
+      if(window.navigator.geolocation){
+        window.navigator.geolocation.getCurrentPosition(succesGeo, console.log)
+        }
+
+
+    }
+  }
+
+
+
+  class Location{
+    constructor() {
+      this.apiKey='574a56f8348b40a287637b13435a2930'
+      this.city = null;
+      this.country= '';
+    }
+
+
+    getLocation(newCity, newCountry){
+
+      this.succesGeo = position =>{
+        const { latitude, longitude } = position.coords;
+         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${this.apiKey}`)
+           .then(response=>response.json())
+           .then(response=> {
+              const responseData = response.results;
+
+              responseData.forEach(function(a){
+                console.log(a);
+                newCity= a.components.city;
+                newCountry = a.components.country_code;
+              })
+
+
+            this.city= newCity;
+           })
+
+
+    }
+
+
+      if(window.navigator.geolocation){
+        window.navigator.geolocation.getCurrentPosition(this.succesGeo, console.log)
+        }
+
+
+
+    }
+  }
